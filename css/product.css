@@ -1,0 +1,115 @@
+/* ==========================================================================
+   MINI BIKE KLUB — Product Detail Page Styles
+   ========================================================================== */
+
+.breadcrumb{
+  padding:24px 0;
+  font-size:12px;
+  letter-spacing:0.5px;
+  color:var(--text-secondary);
+}
+.breadcrumb a{ color:var(--text-secondary); }
+.breadcrumb a:hover{ color:var(--text); }
+
+.pdp{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:70px;
+  padding:20px 0 80px;
+}
+.pdp-image{
+  aspect-ratio:1/1;
+  background:var(--border);
+  overflow:hidden;
+  position:sticky;
+  top:110px;
+  align-self:start;
+}
+.pdp-image img{ width:100%; height:100%; object-fit:cover; }
+
+.pdp-info{ display:flex; flex-direction:column; gap:22px; }
+.pdp-title{ margin-bottom:2px; }
+.pdp-price{ font-size:22px; font-weight:300; }
+
+.pdp-attr-row{
+  display:flex;
+  gap:40px;
+  padding:20px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.pdp-attr label{
+  display:block;
+  font-size:11px;
+  letter-spacing:1px;
+  color:var(--text-secondary);
+  margin-bottom:6px;
+}
+.pdp-attr span{ font-size:14px; }
+
+.qty-row{ display:flex; align-items:center; gap:18px; }
+.qty-selector{
+  display:flex;
+  align-items:center;
+  border:1px solid var(--border);
+}
+.qty-selector button{
+  background:none;
+  border:none;
+  color:var(--text);
+  width:38px;
+  height:42px;
+  font-size:16px;
+}
+.qty-selector input{
+  width:44px;
+  text-align:center;
+  border:none;
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+  background:none;
+  color:var(--text);
+  height:42px;
+  font-size:14px;
+}
+
+.pdp-actions{ display:flex; gap:12px; }
+.pdp-actions .btn{ flex:1; }
+.btn-solid{ background:var(--text); color:var(--bg); border-color:var(--text); }
+.btn-solid:hover{ background:var(--btn-hover-bg); color:var(--btn-hover-text); border-color:var(--btn-hover-border); }
+
+.pdp-note{ font-size:12px; color:var(--text-secondary); }
+
+.pdp-accordion{ margin-top:10px; }
+.acc-item{ border-top:1px solid var(--border); }
+.acc-item:last-child{ border-bottom:1px solid var(--border); }
+.acc-trigger{
+  width:100%;
+  background:none;
+  border:none;
+  color:var(--text);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+  font-size:14px;
+  letter-spacing:0.5px;
+}
+.acc-trigger .plus{ transition:transform .25s var(--ease); }
+.acc-item.open .acc-trigger .plus{ transform:rotate(45deg); }
+.acc-panel{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s var(--ease);
+}
+.acc-panel-inner{ padding-bottom:20px; font-size:14px; }
+.acc-panel-inner ul{ padding-left:18px; margin:10px 0 0; color:var(--text-secondary); }
+.acc-panel-inner li{ margin-bottom:6px; }
+
+.related-section{ padding:80px 0 100px; border-top:1px solid var(--border); }
+.related-section h2{ margin-bottom:34px; }
+
+@media (max-width:900px){
+  .pdp{ grid-template-columns:1fr; gap:34px; padding-top:6px; }
+  .pdp-image{ position:static; }
+}

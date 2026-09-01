@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Testimonials | Mini Bike Klub</title>
+<meta name="description" content="Real customers, real builds. See what Mini Bike Klub customers across the country say about their mini bikes and mini drift trikes.">
+<link rel="canonical" href="https://minibikeklub.com/testimonials">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Customer Testimonials | Mini Bike Klub">
+<meta property="og:description" content="Real customers, real builds. See what Mini Bike Klub customers across the country say about their mini bikes and mini drift trikes.">
+<meta property="og:url" content="https://minibikeklub.com/testimonials">
+<meta property="og:image" content="https://minibikeklub.com/images/home/home-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Customer Testimonials | Mini Bike Klub">
+<meta name="twitter:description" content="Real customers, real builds. See what Mini Bike Klub customers across the country say about their mini bikes and mini drift trikes.">
+<meta name="twitter:image" content="https://minibikeklub.com/images/home/home-hero.jpg">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<style>
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1px;}
+.testimonial-card{background:var(--bg);padding:34px;display:flex;flex-direction:column;gap:16px;}
+.testimonial-photo{aspect-ratio:4/3;background:var(--border);overflow:hidden;}
+.testimonial-photo img{width:100%;height:100%;object-fit:cover;}
+.testimonial-quote{font-size:14px;line-height:1.6;}
+.testimonial-name{font-size:12px;letter-spacing:0.5px;color:var(--text);}
+.testimonial-cta{text-align:center;max-width:600px;margin:0 auto;padding:90px 0 100px;display:flex;flex-direction:column;align-items:center;gap:22px;}
+.testimonial-cta p{max-width:480px;}
+@media (max-width:900px){.testimonial-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.testimonial-grid{grid-template-columns:1fr;}}
+</style>
+<script>
+/* Prevent theme flash: apply saved/system theme before first paint */
+(function(){
+  try{
+    var t = localStorage.getItem("mbk-theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">MINI BIKE KLUB</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="shop.html" class="">Shop</a></li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="testimonials.html" class=" active">Testimonials</a></li>
+        <li><a href="blog.html" class="">Blog</a></li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="cart.html" class="icon-btn" aria-label="View cart">
+        CART <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark and light mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="shop.html">SHOP</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="testimonials.html">TESTIMONIALS</a></li>
+    <li><a href="blog.html">BLOG</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+    <li><a href="cart.html">CART (<span data-cart-count>0</span>)</a></li>
+    <li><button class="mobile-theme" data-theme-toggle data-theme-label>DARK MODE</button></li>
+  </ul>
+</div>
+
+<section class="page-header">
+  <div class="container">
+    <h1>CUSTOMERS. REAL BUILDS. REAL EXPERIENCES.</h1>
+    <p>From custom mini bikes to drift trikes, customers choose Mini Bike Klub for distinctive machines and a straightforward buying experience.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-california.jpg" alt="Marcus from California, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;10/10 purchase! The drift trike looks even better in person and the build feels really solid. Shipping was smooth and I was kept updated along the way. I've been wanting one for months and this definitely did not disappoint. Worth it!&rdquo;</p>
+      <div class="testimonial-name">Marcus — California</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-texas.jpg" alt="Jordan from Texas, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;Absolutely love my mini drift trike. It arrived in great condition and was ready to go. The attention to detail on the build really stands out, and it's been a blast riding it. I've already got friends asking if they can try it.&rdquo;</p>
+      <div class="testimonial-name">Jordan — Texas</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-florida.jpg" alt="Alicia from Florida, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;I had been looking for a mini bike for a while and I'm so glad I went with this one. It came exactly as pictured, started right up, and feels really solid. Customer service was also great and kept me updated throughout the process. I absolutely love it!&rdquo;</p>
+      <div class="testimonial-name">Alicia — Florida</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-georgia.jpg" alt="DeShawn from Georgia, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;This drift trike is crazy fun! The quality is better than I expected and it looks amazing in person. Took it out for the first time and immediately understood the hype. The entire buying experience was easy and straightforward. Highly recommend!&rdquo;</p>
+      <div class="testimonial-name">DeShawn — Georgia</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-arizona.jpg" alt="Sofia from Arizona, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;I'm honestly so happy with my mini bike! The whole process was smooth from ordering to delivery, and the bike looked even better in person. It rides great and gets so much attention whenever I take it out. Definitely worth every penny!&rdquo;</p>
+      <div class="testimonial-name">Sofia — Arizona</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-photo"><img src="images/testimonials/testimonial-nevada.jpg" alt="Riley from Nevada, Mini Bike Klub customer" loading="lazy"></div>
+      <p class="testimonial-quote">&ldquo;This mini bike is on fire. The build quality surprised me and it rides really smooth. I've already had a bunch of people ask where I got it from. Everything from the purchase to delivery was handled professionally. I'm definitely enjoying this bike!&rdquo;</p>
+      <div class="testimonial-name">Riley — Nevada</div>
+    </div>
+  </div>
+  <div class="testimonial-cta reveal">
+    <h2>THIS COULD BE YOU.</h2>
+    <p>Join thousands of riders who've made the switch to a machine that actually turns heads. Every build ships with the same attention to detail our customers keep talking about.</p>
+    <a href="shop.html" class="btn btn-solid">SHOP NOW</a>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">MINI BIKE KLUB</a>
+        <p>High-quality mini bikes and mini drift trikes built for fun, style and performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SHOP</h4>
+        <ul>
+          <li><a href="shop.html?category=mini-bikes">Mini Bikes</a></li>
+          <li><a href="shop.html?category=mini-drift-trikes">Mini Drift Trikes</a></li>
+          <li><a href="shop.html?category=parts">Parts &amp; Accessories</a></li>
+          <li><a href="contact.html">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col contact-col">
+        <h4>CONTACT</h4>
+        <p>+1 XXX XXX XXXX</p>
+        <p>xxxxx@gmail.com</p>
+        <p>California, USA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year></span> MINI BIKE KLUB. ALL RIGHTS RESERVED.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/theme.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/notifications.js"></script>
+
+<!-- Tawk.to live chat — property/widget IDs are read from window.MBK_CONFIG
+     (set in main.js) rather than hardcoded per page. Uncomment once
+     configured:
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function(){
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/" + window.MBK_CONFIG.TAWK_TO_PROPERTY_ID + "/" + window.MBK_CONFIG.TAWK_TO_WIDGET_ID;
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+-->
+</body>
+</html>

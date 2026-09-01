@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Bike Klub | Mini Bikes, Drift Trikes & Custom Builds</title>
+<meta name="description" content="Premium mini bikes, mini drift trikes, parts and custom builds. Distinctive machines with style and performance from Mini Bike Klub.">
+<link rel="canonical" href="https://minibikeklub.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mini Bike Klub | Mini Bikes, Drift Trikes & Custom Builds">
+<meta property="og:description" content="Premium mini bikes, mini drift trikes, parts and custom builds. Distinctive machines with style and performance from Mini Bike Klub.">
+<meta property="og:url" content="https://minibikeklub.com/">
+<meta property="og:image" content="https://minibikeklub.com/images/home/home-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mini Bike Klub | Mini Bikes, Drift Trikes & Custom Builds">
+<meta name="twitter:description" content="Premium mini bikes, mini drift trikes, parts and custom builds. Distinctive machines with style and performance from Mini Bike Klub.">
+<meta name="twitter:image" content="https://minibikeklub.com/images/home/home-hero.jpg">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<script>
+/* Prevent theme flash: apply saved/system theme before first paint */
+(function(){
+  try{
+    var t = localStorage.getItem("mbk-theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mini Bike Klub",
+  "url": "https://minibikeklub.com",
+  "description": "Premium mini bikes, mini drift trikes, parts and custom builds."
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">MINI BIKE KLUB</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class=" active">Home</a></li>
+        <li><a href="shop.html" class="">Shop</a></li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="testimonials.html" class="">Testimonials</a></li>
+        <li><a href="blog.html" class="">Blog</a></li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="cart.html" class="icon-btn" aria-label="View cart">
+        CART <span class="cart-count" data-cart-count>0</span>
+      </a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark and light mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="shop.html">SHOP</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="testimonials.html">TESTIMONIALS</a></li>
+    <li><a href="blog.html">BLOG</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+    <li><a href="cart.html">CART (<span data-cart-count>0</span>)</a></li>
+    <li><button class="mobile-theme" data-theme-toggle data-theme-label>DARK MODE</button></li>
+  </ul>
+</div>
+
+<section class="hero">
+  <div class="hero-content reveal">
+    <span class="eyebrow">MINI BIKE KLUB</span>
+    <h1>TINY MACHINES.<br>MASSIVE EXCITEMENT.</h1>
+    <p class="hero-desc">High-quality mini bikes and mini drift trikes built for fun, style and performance.</p>
+    <a href="shop.html" class="btn btn-solid">BROWSE BIKES</a>
+  </div>
+  <div class="hero-media">
+    <img src="images/home/home-hero.jpg" alt="Custom Mini Bike Klub mini bike parked in studio light" loading="eager">
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-row">
+    <div class="stat reveal">
+      <div class="stat-number" data-count-to="3000">0</div>
+      <div class="stat-label">BIKES DELIVERED</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-number" data-count-to="2800">0</div>
+      <div class="stat-label">ORDERS PLACED</div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-split">
+  <div class="feature-media reveal">
+    <img src="images/home/home-mini-bike.jpg" alt="Custom Mini Bike Klub mini bike" loading="lazy">
+  </div>
+  <div class="feature-text reveal">
+    <span class="eyebrow">MINI BIKES</span>
+    <h2>SHOP OUR MINI BIKES</h2>
+    <p>Explore our collection of custom mini bikes built for riders who want compact machines with serious personality.</p>
+    <a href="shop.html?category=mini-bikes" class="btn">SHOP MINI BIKES</a>
+  </div>
+</section>
+
+<section class="feature-split reverse">
+  <div class="feature-media reveal">
+    <img src="images/home/home-drift-trike.jpg" alt="Custom Mini Bike Klub mini drift trike" loading="lazy">
+  </div>
+  <div class="feature-text reveal">
+    <span class="eyebrow">MINI DRIFT TRIKES</span>
+    <h2>MINI DRIFT TRIKES</h2>
+    <p>Built for riders looking for a different kind of experience, our custom mini drift trikes combine distinctive styling with an exciting three-wheel setup.</p>
+    <a href="shop.html?category=mini-drift-trikes" class="btn">SHOP MINI DRIFT TRIKES</a>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="container inner reveal">
+    <h2>BUILT FOR FUN. BUILT TO STAND OUT.</h2>
+    <p>Mini Bike Klub brings together compact machines, custom styling and an appreciation for the riding experience. From mini bikes to drift trikes and custom components, our collection is designed for customers who want something different from the ordinary.</p>
+    <a href="about.html" class="btn">ABOUT MINI BIKE KLUB</a>
+  </div>
+</section>
+
+<section class="video-section">
+  <div class="video-wrap reveal">
+    <video controls muted playsinline poster="videos/drift-trike-poster.jpg">
+      <source src="videos/drift-trike-riding.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-caption reveal">
+    <h2>SEE WHAT THE EXPERIENCE LOOKS LIKE.</h2>
+    <p>Compact machines. Big personality. A whole different way to ride.</p>
+    <a href="shop.html" class="btn btn-solid">SHOP NOW</a>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <h2 class="why-heading reveal">WHY CHOOSE MINI BIKE KLUB?</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-num">01</span><h3>DISTINCTIVE BUILDS</h3><p>Custom styling and carefully selected configurations designed to stand apart from ordinary mini bikes.</p></div>
+      <div class="why-item"><span class="why-num">02</span><h3>PERFORMANCE-FOCUSED</h3><p>Our selection is built around riders looking for an exciting combination of power, handling and compact design.</p></div>
+      <div class="why-item"><span class="why-num">03</span><h3>CUSTOM OPTIONS</h3><p>Choose from custom bikes, drift trikes, components and build-ready parts.</p></div>
+      <div class="why-item"><span class="why-num">04</span><h3>QUALITY COMPONENTS</h3><p>From frames and wheels to engines and body components, every product is selected with the build in mind.</p></div>
+      <div class="why-item"><span class="why-num">05</span><h3>CUSTOMER EXPERIENCE</h3><p>From browsing to ordering and delivery, we aim to make the buying experience straightforward and professional.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container inner">
+    <h2 class="reveal">STAY IN THE KLUB</h2>
+    <p class="reveal">Get new builds, product updates and special offers delivered to your inbox.</p>
+    <form class="newsletter-form reveal" data-newsletter-form novalidate>
+      <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <p class="form-msg" data-form-msg></p>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">MINI BIKE KLUB</a>
+        <p>High-quality mini bikes and mini drift trikes built for fun, style and performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SHOP</h4>
+        <ul>
+          <li><a href="shop.html?category=mini-bikes">Mini Bikes</a></li>
+          <li><a href="shop.html?category=mini-drift-trikes">Mini Drift Trikes</a></li>
+          <li><a href="shop.html?category=parts">Parts &amp; Accessories</a></li>
+          <li><a href="contact.html">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col contact-col">
+        <h4>CONTACT</h4>
+        <p>+1 XXX XXX XXXX</p>
+        <p>xxxxx@gmail.com</p>
+        <p>California, USA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year></span> MINI BIKE KLUB. ALL RIGHTS RESERVED.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/theme.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/notifications.js"></script>
+
+<!-- Tawk.to live chat — property/widget IDs are read from window.MBK_CONFIG
+     (set in main.js) rather than hardcoded per page. Uncomment once
+     configured:
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function(){
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/" + window.MBK_CONFIG.TAWK_TO_PROPERTY_ID + "/" + window.MBK_CONFIG.TAWK_TO_WIDGET_ID;
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+-->
+</body>
+</html>

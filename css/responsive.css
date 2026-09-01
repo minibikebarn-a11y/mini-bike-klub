@@ -1,0 +1,60 @@
+/* ==========================================================================
+   MINI BIKE KLUB — Responsive Rules
+   ========================================================================== */
+
+/* ---------------- Tablet / small laptop ---------------- */
+@media (max-width:1024px){
+  .why-grid{ grid-template-columns:repeat(2,1fr); }
+  .footer-grid{ grid-template-columns:1.4fr 1fr 1fr; }
+  .footer-col.contact-col{ grid-column:1 / -1; }
+}
+
+/* ---------------- Nav collapses to hamburger ---------------- */
+@media (max-width:860px){
+  .nav-links{ display:none; }
+  .nav-toggle{ display:block; }
+  .mobile-menu{ display:block; }
+}
+
+/* ---------------- Mobile stacking ---------------- */
+@media (max-width:768px){
+  .hero{ grid-template-columns:1fr; min-height:auto; }
+  .hero-content{ padding:50px var(--gutter-mobile) 30px; order:1; }
+  .hero-media{ order:2; min-height:320px; }
+
+  .stats-row{ grid-template-columns:1fr; }
+  .stat:first-child{ border-right:none; border-bottom:1px solid var(--border); }
+
+  .feature-split, .feature-split.reverse{ grid-template-columns:1fr; direction:ltr; }
+  .feature-media{ min-height:280px; order:1; }
+  .feature-text{ order:2; padding:40px var(--gutter-mobile); }
+
+  .trust-section{ padding:70px 0; }
+  .why-section{ padding:70px 0; }
+  .why-heading{ margin-bottom:10px; }
+  .why-grid{ grid-template-columns:1fr; }
+
+  .video-caption{ padding:50px var(--gutter-mobile); }
+  .video-wrap{ aspect-ratio:4/5; }
+
+  .newsletter{ padding:70px 0; }
+  .newsletter-form{ flex-direction:column; }
+  .newsletter-form button{ border-left:none; border-top:1px solid var(--border); padding:14px; }
+
+  .page-header{ padding:50px 0 34px; }
+
+  .footer-grid{ grid-template-columns:1fr 1fr; gap:36px 20px; padding-bottom:40px; }
+  .footer-brand{ grid-column:1 / -1; }
+  .footer-bottom{ flex-direction:column; align-items:flex-start; }
+
+  .section-pad{ padding:60px 0; }
+}
+
+@media (max-width:480px){
+  .footer-grid{ grid-template-columns:1fr; }
+}
+
+/* ---------------- Large desktop ---------------- */
+@media (min-width:1600px){
+  :root{ --container-max:1520px; }
+}
