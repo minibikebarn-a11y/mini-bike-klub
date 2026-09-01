@@ -31,7 +31,7 @@ Static site — just deploy the folder as-is (no framework preset needed), same 
 1. **Images** — see `images/README.md` for the exact file list and paths. Nothing here uses placeholder/stock image URLs, per spec.
 2. **Video** — see `videos/README.md` for `drift-trike-riding.mp4` + poster.
 3. **Testimonials** — `testimonials.html` currently has placeholder quote text. Replace with real, approved customer reviews before publishing (spec explicitly prohibits fabricated testimonials presented as real).
-4. **Contact info** — phone/email placeholders (`+1 XXX XXX XXXX`, `xxxxx@gmail.com`) appear in the header/footer/contact/checkout — search-and-replace once real contact details are ready.
+4. **Contact info** — phone/email placeholders (`+1 (806) 853-0752X`, `minibikeklub@gmail.com `) appear in the header/footer/contact/checkout — search-and-replace once real contact details are ready.
 5. **Privacy Policy / Terms & Conditions** — `privacy-policy.html` and `terms.html` are minimal placeholders (footer links to them). Not in the original spec's page list, but needed since the checkout agreement references them.
 
 ## Setting up Resend (order + newsletter emails)
