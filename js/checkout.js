@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   /* Validation + submission */
   if (form){
-    form.addEventListener("submit", function(e){
+    form.addEventListener("submit", async function(e){
       e.preventDefault();
 
       let valid = true;
@@ -95,10 +95,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
       if (!valid) return;
 
-      /* Create a placeholder order. In production this call goes to a
-         serverless function that re-validates everything server-side,
-         persists the order, and triggers Resend order-confirmation emails
-         (customer + admin) per spec section 33. */
+      const submitBtn = form.querySelector("[data-place-order]");
+      if (submitBtn){ submitBtn.setAttribute("disabled", "disabled"); submitBtn.textContent = "PLACING ORDER…"; }
+
       const orderNumber = "MBK-" + Math.floor(10000 + Math.random() * 89999);
       const order = {
         orderNumber: orderNumber,
@@ -110,6 +109,23 @@ document.addEventListener("DOMContentLoaded", function(){
         billing: Object.fromEntries(new FormData(form).entries()),
         createdAt: new Date().toISOString()
       };
+
+      /* Send order-confirmation + admin-notification emails via Resend
+         (api/send-order-email.js). If the email call fails, the order still
+         completes locally — we don't want a flaky email provider to block a
+         sale — but it's logged so you can catch it in Vercel's function logs. */
+      try {
+        const resp = await fetch("/api/send-order-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(order)
+        });
+        if (!resp.ok){
+          console.error("Order email failed:", await resp.text());
+        }
+      } catch (err){
+        console.error("Order email request failed:", err);
+      }
 
       sessionStorage.setItem("mbk-last-order", JSON.stringify(order));
       MbkCart.clear();

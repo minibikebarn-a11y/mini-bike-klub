@@ -26,15 +26,12 @@
       showMsg("Subscribing…", "");
 
       try{
-        // Placeholder call — wire to /api/newsletter (Resend / list provider)
-        // once the backend is configured. Never call an email-service API
-        // key from the frontend.
-        // const res = await fetch("/api/newsletter", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify({ email: value })
-        // });
-        await new Promise(function(resolve){ setTimeout(resolve, 400); });
+        const res = await fetch("/api/newsletter", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: value })
+        });
+        if (!res.ok) throw new Error("Signup failed");
         showMsg("You're on the list. Welcome to the klub.", "success");
         form.reset();
       } catch(err){
