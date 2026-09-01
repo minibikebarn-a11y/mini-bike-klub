@@ -323,11 +323,28 @@ document.addEventListener("DOMContentLoaded", function(){
     }catch(e){ /* no-op — falls back to static placeholder in markup */ }
   }
 
-  /* ---------------- Tawk.to placeholder mount point ----------------
-     Loaded from a config value rather than hardcoded across the project.
-     See assets note in footer of each page / TAWK_TO_PROPERTY_ID below. */
+  /* ---------------- Tawk.to live chat ----------------
+     Set your real IDs below (from Tawk.to → Administration → Chat Widget),
+     then the widget auto-loads on every page — no need to edit each HTML
+     file individually. Leave both blank to keep chat disabled. */
   window.MBK_CONFIG = window.MBK_CONFIG || {
-    TAWK_TO_PROPERTY_ID: "", // set before going live
-    TAWK_TO_WIDGET_ID: ""
+    TAWK_TO_PROPERTY_ID: "6a971a694bf4e4344960a7f5",
+    TAWK_TO_WIDGET_ID: "1k1f3ucd9"
   };
+
+  (function loadTawkTo(){
+    var id = window.MBK_CONFIG.TAWK_TO_PROPERTY_ID;
+    var widget = window.MBK_CONFIG.TAWK_TO_WIDGET_ID;
+    if (!id || !widget) return; // not configured yet — skip silently
+
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script");
+    var s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/" + id + "/" + widget;
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  })();
 });
