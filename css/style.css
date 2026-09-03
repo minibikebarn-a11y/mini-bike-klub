@@ -543,3 +543,26 @@ p{ margin:0; color:var(--text-secondary); font-size:16px; }
 /* ---------------- Section spacing helper ---------------- */
 section{ }
 .section-pad{ padding:100px 0; }
+.social-links{
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+}
+.social-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border:1px solid var(--border);
+  color:var(--text-secondary);
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+}
+.social-links a:hover{
+  color:var(--text);
+  border-color:var(--text);
+}
+.social-links svg{
+  width:16px;
+  height:16px;
+}
