@@ -323,13 +323,14 @@ document.addEventListener("DOMContentLoaded", function(){
     }catch(e){ /* no-op — falls back to static placeholder in markup */ }
   }
 
-  /* ---------------- Tawk.to live chat ----------------
-     Set your real IDs below (from Tawk.to → Administration → Chat Widget),
-     then the widget auto-loads on every page — no need to edit each HTML
-     file individually. Leave both blank to keep chat disabled. */
+  /* ---------------- Tawk.to live chat + Google Analytics ----------------
+     Set your real IDs below, then both auto-load on every page — no need
+     to edit each HTML file individually. Leave a value blank to keep that
+     integration disabled. */
   window.MBK_CONFIG = window.MBK_CONFIG || {
     TAWK_TO_PROPERTY_ID: "6a971a694bf4e4344960a7f5",
-    TAWK_TO_WIDGET_ID: "1k1f3ucd9"
+    TAWK_TO_WIDGET_ID: "1k1f3ucd9",
+    GA4_MEASUREMENT_ID: "G-QRLWQPPTWL" // from Google Analytics → Admin → Data Streams
   };
 
   (function loadTawkTo(){
@@ -346,5 +347,21 @@ document.addEventListener("DOMContentLoaded", function(){
     s1.charset = "UTF-8";
     s1.setAttribute("crossorigin", "*");
     s0.parentNode.insertBefore(s1, s0);
+  })();
+
+  (function loadGoogleAnalytics(){
+    var id = window.MBK_CONFIG.GA4_MEASUREMENT_ID;
+    if (!id) return; // not configured yet — skip silently
+
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+    document.head.appendChild(s1);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", id);
   })();
 });
