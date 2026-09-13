@@ -161,6 +161,15 @@ document.addEventListener("DOMContentLoaded", function(){
         const qtyInput = document.querySelector("[data-qty-input]");
         const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
         MbkCart.add(product, qty);
+        if (window.fbq){
+          window.fbq("track", "AddToCart", {
+            content_ids: [product.id],
+            content_name: product.name,
+            content_type: "product",
+            value: product.price * qty,
+            currency: "USD"
+          });
+        }
         const originalText = btn.textContent;
         btn.textContent = "ADDED";
         setTimeout(function(){ btn.textContent = originalText; }, 1200);
@@ -194,6 +203,16 @@ document.addEventListener("DOMContentLoaded", function(){
         const qty = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
         if (product){
           MbkCart.add(product, qty);
+          if (window.fbq){
+            window.fbq("track", "AddToCart", {
+              content_ids: [product.id],
+              content_name: product.name,
+              content_type: "product",
+              value: product.price * qty,
+              currency: "USD"
+            });
+            window.fbq("track", "InitiateCheckout");
+          }
           window.location.href = "../checkout.html";
         }
       });
@@ -323,14 +342,15 @@ document.addEventListener("DOMContentLoaded", function(){
     }catch(e){ /* no-op — falls back to static placeholder in markup */ }
   }
 
-  /* ---------------- Tawk.to live chat + Google Analytics ----------------
-     Set your real IDs below, then both auto-load on every page — no need
-     to edit each HTML file individually. Leave a value blank to keep that
-     integration disabled. */
+  /* ---------------- Tawk.to live chat + Google Analytics + Meta Pixel ----------------
+     Set your real IDs below, then all three auto-load on every page — no
+     need to edit each HTML file individually. Leave a value blank to keep
+     that integration disabled. */
   window.MBK_CONFIG = window.MBK_CONFIG || {
     TAWK_TO_PROPERTY_ID: "6a971a694bf4e4344960a7f5",
     TAWK_TO_WIDGET_ID: "1k1f3ucd9",
-    GA4_MEASUREMENT_ID: "G-QRLWQPPTWL" // from Google Analytics → Admin → Data Streams
+    GA4_MEASUREMENT_ID: "G-QRLWQPPTWL", // from Google Analytics → Admin → Data Streams
+    META_PIXEL_ID: "1414960480523847" // from Meta Events Manager → your pixel
   };
 
   (function loadTawkTo(){
@@ -363,5 +383,42 @@ document.addEventListener("DOMContentLoaded", function(){
     window.gtag = gtag;
     gtag("js", new Date());
     gtag("config", id);
+  })();
+
+  (function loadMetaPixel(){
+    var id = window.MBK_CONFIG.META_PIXEL_ID;
+    if (!id) return; // not configured yet — skip silently
+
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return; n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version="2.0";
+      n.queue=[]; t=b.createElement(e); t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    window.fbq("init", id);
+    window.fbq("track", "PageView");
+
+    // Purchase event — only on the order confirmation page, and only once
+    // per order (guards against inflating conversion counts on refresh).
+    const orderNumEl = document.querySelector("[data-order-number]");
+    if (orderNumEl){
+      try{
+        const order = JSON.parse(sessionStorage.getItem("mbk-last-order"));
+        const trackedKey = "mbk-purchase-tracked-" + (order && order.orderNumber);
+        if (order && order.orderNumber && !sessionStorage.getItem(trackedKey)){
+          window.fbq("track", "Purchase", {
+            value: order.total,
+            currency: "USD",
+            content_ids: (order.items || []).map(function(i){ return i.id; }),
+            content_type: "product",
+            num_items: (order.items || []).reduce(function(sum, i){ return sum + i.quantity; }, 0)
+          });
+          sessionStorage.setItem(trackedKey, "1");
+        }
+      }catch(e){ /* no-op */ }
+    }
   })();
 });
